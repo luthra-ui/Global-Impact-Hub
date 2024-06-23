@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Impact Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <button class="toggle-btn">🌙</button>
+    <div class="container">
+        <div class="header">
+            <h1 class="typing">Global Impact Hub</h1>
+        </div>
+        <div class="main-content">
+            <div class="section" id="form-section">
+                <h2>Sign Up</h2>
+                <form action="{{ url_for('submit') }}" method="POST" class="form-signup needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="field-of-study">Field of Study:</label>
+                        <select id="field-of-study" name="field_of_study" class="form-control" required>
+                            <option value="" disabled selected>Select your field</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Education">Education</option>
+                            <option value="Environmental Science">Environmental Science</option>
+                            <option value="Economics">Economics</option>
+                            <option value="Political Science">Political Science</option>
+                            <option value="Social Sciences">Social Sciences</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Arts">Arts</option>
+                            <option value="Law">Law</option>
+                        </select>
+                        <div class="invalid-feedback">Please select your field of study.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                </form>
+            </div>
+            <div class="content-sections">
+                <div class="section" id="quotes-section">
+                    <h2>Quotes</h2>
+                    <p class="quote">"The best way to predict the future is to create it." - Peter Drucker</p>
+                    <p class="quote">"Sustainability is no longer about doing less harm. It's about doing more good." - Jochen Zeitz</p>
+                    <p class="quote">"In a gentle way, you can shake the world." - Mahatma Gandhi</p>
+                    <p class="quote">"The power of the people is much stronger than the people in power." - Wael Ghonim</p>
+                    <p class="quote">"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+                </div>
+                <div class="section" id="goals-section">
+                    <h2>Global Impact Hub Goals & Unsolved Problems</h2>
+                    <p class="goal">Promote sustainable development across all sectors.</p>
+                    <p class="goal">Foster innovation and creativity to solve global issues.</p>
+                    <p class="goal">Enhance global partnerships for sustainable solutions.</p>
+                    <p class="goal">Empower individuals through education and skill development.</p>
+                    <p class="goal">Encourage responsible consumption and production.</p>
+                    <p class="problem">Global Warming</p>
+                    <p class="problem">Poverty</p>
+                    <p class="problem">Inequality</p>
+                    <p class="problem">Access to Clean Water</p>
+                    <p class="problem">Healthcare Disparities</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

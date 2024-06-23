@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+    <div class="container success-container">
+        <h1>Success!</h1>
+        <p>Thank you for signing up. Click the link below to join our Slack channel.</p>
+        <p>
+            <a href="{{ slack_invite_link }}" class="btn btn-primary" target="_blank">Join Our Slack</a>
+        </p>
+        <a href="/" class="btn btn-secondary btn-block">Back to Home</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Trigger confetti
+        document.addEventListener('DOMContentLoaded', function() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDelay = `${Math.random() * 5}s`;
+                document.body.appendChild(confetti);
+            }
+        });
+    </script>
+</body>
+</html>

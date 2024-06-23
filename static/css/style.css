@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2588c2;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.typing {
+    font-size: 2.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fff;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.section#form-section {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.section#quotes-section, .section#goals-section {
+    flex: 1;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.invalid-feedback {
+    color: #f8d7da;
+}
+
+.quote, .goal, .problem {
+    display: none;
+}
+
+.quote.active, .goal.active, .problem.active {
+    display: block;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    animation: confetti-fall 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes confetti-fall {
+    from { top: -10px; }
+    to { top: 100vh; }
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.toggle-btn:focus {
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .content-sections {
+        flex-direction: row;
+    }
+}
